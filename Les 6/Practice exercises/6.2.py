@@ -12,3 +12,5 @@ with open('tickerbestand', 'r') as ticker:
     for (key,value) in reader:
         if (value) == symbol:
             print('Company name: {}' .format(key))
+
+#ud
