@@ -1,8 +1,13 @@
 import csv
 
-with open('namen.csv', 'r') as namen:
-    reader = csv.reader(namen, delimiter=';')
+with open('gamers.csv', 'r') as namen:
+    gamers = csv.reader(namen, delimiter=';')
 
-    for row in reader:
-        print(row)
-        print('{} heeft als beroep : {}'.format(row[0], row[1]))
+    maximaal = 0
+
+    for naam in gamers:
+
+        score = int(naam[2])
+        if score > maximaal:
+            maximaal = score
+    print('De hoogste score is: {} op {} behaald door {}'.format(naam[2], naam[1], naam[0]))

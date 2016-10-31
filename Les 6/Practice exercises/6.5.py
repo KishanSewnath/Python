@@ -7,9 +7,9 @@ def monoplyworp():
     eindeRonde = True
     while eindeRonde:
 
-        eersteWorp = random.randrange(1, 7)
+        eersteWorp = random.randrange(6, 7)
 
-        tweedeWorp = random.randrange(1, 7)
+        tweedeWorp = random.randrange(6, 7)
 
         totaal = eersteWorp + tweedeWorp
 

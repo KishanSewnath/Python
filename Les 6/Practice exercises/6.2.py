@@ -13,4 +13,4 @@ with open('tickerbestand', 'r') as ticker:
         if (value) == symbol:
             print('Company name: {}' .format(key))
 
-#ud
+#udf
