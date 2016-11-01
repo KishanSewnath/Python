@@ -5,7 +5,7 @@ import random
 def nieuwe_kluis():
     with open('codes.csv', 'a', newline='')as kluizen:
         writer = csv.writer(kluizen, delimiter=';')
-        code = random.randint(1000, 9999)
+        code = random.randint(1000, 10000)
         beschikbaar = aantal_kluizen_vrij()
         if beschikbaar != 0:
             writer.writerow([beschikbaar, code])

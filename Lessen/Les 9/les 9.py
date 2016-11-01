@@ -7,6 +7,8 @@ response = requests.get(api_url, auth=auth_details)
 
 vertrekXML = xmltodict.parse(response.text)
 
+print(vertrekXML)
+
 print('Dit zijn de vertrekkende treinen:')
 for vertrek in vertrekXML['ActueleVertrekTijden']['VertrekkendeTrein']:
     eindbestemming = vertrek['EindBestemming']
