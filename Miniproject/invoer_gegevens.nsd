@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:nsd="http://structorizer.fisch.lu/" version="3.25-01" preRepeat="jusqu'à " postFor="à" preReturn="return" postForIn=" en " preWhile="tant que " output="écrire" input="lire" preFor="pour " preExit="exit" preLeave="leave" ignoreCase="true" preForIn="pour " stepFor=", pas = " text="&#34;invoer_gegevens&#34;" comment="" color="ffffff" type="program" style="nice">
+	<children>
+		<for text="&#34;with open('bezoekers.csv', 'a', newline='')as bezoekers:&#34;" comment="" counterVar="dummy_counter" startValue="with open('bezoekers.csv', 'a', newline='')as bezoekers:" stepConst="1" style="FREETEXT" color="ffffff">
+			<qFor>
+				<instruction text="&#34;writer = csv.writer(bezoekers, delimiter=';')&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;naam = input('Geef naam: ')&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;email = input('Geef emailadres: ')&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;print('U kunt kiezen uit de volgende films:')&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;films = filmkeuze()&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;print (films)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;code = random.randint(1000, 10000)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;print ('Uw unieke code is: '+str(code))&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;writer.writerow([naam, email, code])&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qFor>
+		</for>
+	</children>
+</root>
