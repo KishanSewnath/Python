@@ -1,19 +1,5 @@
 import csv
-import requests
-import xmltodict
 import random
-
-
-
-def filmkeuze():
-    api_url = 'http://api.filmtotaal.nl/filmsoptv.xml?apikey=uw7tbns0awlo3ovvngkv55j4ofjq9u8m&dag=01-11-2016&sorteer=1'
-    response = requests.get(api_url)
-    filmsXML = xmltodict.parse(response.text)
-    for film in filmsXML['filmsoptv']['film']:
-        titel = film['titel']
-        #starttijd = film['starttijd']
-        print (titel)
-        #print(starttijd)
 
 def invoer_gegevens():
     with open('bezoekers.csv', 'a', newline='')as bezoekers:
@@ -22,16 +8,24 @@ def invoer_gegevens():
         naam = input('Geef naam: ')
         email = input('Geef emailadres: ')
 
-        print('U kunt kiezen uit de volgende films:')
-        films = filmkeuze()
-        print (films)
 
-        code = random.randint(1000, 10000)
-        print ('Uw unieke code is: '+str(code))
+        randomnummer1 = random.randrange(10)
+        randomnummer2 = random.randrange(10)
+        randomnummer3 = random.randrange(10)
+        randomnummer4 = random.randrange(10)
+        helecode = ('{}{}{}{}'.format(randomnummer1, randomnummer2, randomnummer3, randomnummer4))
+        unieke_code = ('Uw unieke code is: {}'.format(helecode))
+        #return haalt none weg, maar print alleen het eerste
+        print(unieke_code)
+        writer.writerow([naam, email, helecode])
 
-        writer.writerow([naam, email, code])
+def gegevens_ophalen():
+    with open('bezoekers.csv', 'r', newline='')as bezoekers:
+        reader = csv.dictreader(bezoekers, delimiter=';')
+        for rij in reader:
+            #return haalt none weg, maar print alleen het eerste
+            print('Naam: {}\nEmailadres: {}\nUnieke code: {}'.format(rij[0], rij[1], rij[2]))
 
-print(invoer_gegevens())
 
 
 
